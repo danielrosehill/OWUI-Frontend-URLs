@@ -1,0 +1,203 @@
+{
+  "metadata": {
+    "lastUpdated": "2025-04-11",
+    "description": "OpenWebUI frontend URLs for simplifying setup of advanced wrappers, clients, and multi-tiled window displays"
+  },
+  "baseUrl": "https://yourinstanceurl.com",
+  "sections": [
+    {
+      "name": "General",
+      "endpoints": [
+        {
+          "function": "Home",
+          "urlPattern": "/",
+          "notes": "Base URL"
+        }
+      ]
+    },
+    {
+      "name": "Models",
+      "endpoints": [
+        {
+          "function": "Models Home",
+          "urlPattern": "/workspace/models",
+          "notes": "List all models"
+        },
+        {
+          "function": "Chat with Specific Model",
+          "urlPattern": "/?models={modelId}",
+          "notes": "Chat UI prepopulated with model",
+          "parameters": [
+            {
+              "name": "modelId",
+              "description": "The ID value from the model table in database",
+              "example": "ai-assistant-platform"
+            }
+          ]
+        },
+        {
+          "function": "Edit Model",
+          "urlPattern": "/workspace/models/edit?id={modelId}",
+          "notes": "Edit a specific model",
+          "parameters": [
+            {
+              "name": "modelId",
+              "description": "The ID value from the model table in database",
+              "example": "ai-assistant-platform"
+            }
+          ]
+        },
+        {
+          "function": "Create New Model",
+          "urlPattern": "/workspace/models/create",
+          "notes": "Create a new model"
+        }
+      ]
+    },
+    {
+      "name": "Knowledge",
+      "endpoints": [
+        {
+          "function": "Knowledge Home",
+          "urlPattern": "/workspace/knowledge",
+          "notes": "List all knowledge collections"
+        },
+        {
+          "function": "Create Knowledge",
+          "urlPattern": "/workspace/knowledge/create",
+          "notes": "Create a new knowledge collection"
+        },
+        {
+          "function": "View Knowledge",
+          "urlPattern": "/workspace/knowledge/{knowledgeId}",
+          "notes": "View a specific knowledge collection",
+          "parameters": [
+            {
+              "name": "knowledgeId",
+              "description": "UUID of the document collection",
+              "example": "a1b2c3d4-e5f6-7890-1234-567890abcdef"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Prompts",
+      "endpoints": [
+        {
+          "function": "Prompts Home",
+          "urlPattern": "/workspace/prompts",
+          "notes": "List all prompts"
+        },
+        {
+          "function": "Create Prompt",
+          "urlPattern": "/workspace/prompts/create",
+          "notes": "Create a new prompt"
+        },
+        {
+          "function": "Edit Prompt",
+          "urlPattern": "/workspace/prompts/edit?command={commandValue}",
+          "notes": "URL based on command line value, not prompt name",
+          "parameters": [
+            {
+              "name": "commandValue",
+              "description": "The command line value for the prompt",
+              "example": "%2Fmy-hardware-specs"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Tools",
+      "endpoints": [
+        {
+          "function": "Tools Home",
+          "urlPattern": "/workspace/tools",
+          "notes": "List all tools"
+        },
+        {
+          "function": "Edit Tool",
+          "urlPattern": "/workspace/tools/edit?id={toolId}",
+          "notes": "Edit a specific tool",
+          "parameters": [
+            {
+              "name": "toolId",
+              "description": "Tool ID in your instance",
+              "example": "postgres_database_tool"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Admin",
+      "endpoints": [
+        {
+          "function": "Settings",
+          "urlPattern": "/admin/settings",
+          "notes": "Admin settings"
+        },
+        {
+          "function": "User Management",
+          "urlPattern": "/admin/users",
+          "notes": "Manage users"
+        },
+        {
+          "function": "Evaluations",
+          "urlPattern": "/admin/evaluations",
+          "notes": "View evaluations"
+        }
+      ]
+    },
+    {
+      "name": "Functions",
+      "endpoints": [
+        {
+          "function": "Functions List",
+          "urlPattern": "/admin/functions",
+          "notes": "List all functions"
+        },
+        {
+          "function": "Edit Function",
+          "urlPattern": "/admin/functions/edit?id={functionId}",
+          "notes": "Edit a specific function",
+          "parameters": [
+            {
+              "name": "functionId",
+              "description": "Function ID",
+              "example": "add_to_knowledge_action"
+            }
+          ]
+        },
+        {
+          "function": "Playground",
+          "urlPattern": "/playground",
+          "notes": "Function playground"
+        },
+        {
+          "function": "Completions Tester",
+          "urlPattern": "/playground/completions",
+          "notes": "Test completions"
+        }
+      ]
+    },
+    {
+      "name": "Conversations",
+      "endpoints": [
+        {
+          "function": "View Chat History",
+          "urlPattern": "/c/{chatId}",
+          "notes": "View a specific chat history",
+          "parameters": [
+            {
+              "name": "chatId",
+              "description": "Chat UUID",
+              "example": "a1b2c3d4-e5f6-7890-1234-567890abcdef"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
